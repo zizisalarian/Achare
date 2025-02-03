@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./font.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>Achare</title>
+</head>
+
+<body>
+
+    <header>
+        <a href="/" class="logo">
+            <img src="./assets/image/logo.png" alt="">
+        </a>
+
+
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="#" class="active">
+                        ثبت آدرس
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        مشاهده آدرس‌ها
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>ثبت آدرس</h1>
+        <section class="form-container" id="register-form">
+            <form @submit.prevent="submitForm">
+                <h3>لطفا مشخصات و آدرس خود را وارد کنید</h3>
+
+                <label for="first-name">نام</label>
+                <div class="input-container">
+                    <input type="text" id="first-name" name="first-name" placeholder="محمد" required
+                        v-model="formData.name" @blur="validateName">
+                    <div class="clear-input">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <g clip-path="url(#clip0_7411_693)">
+                                <circle cx="8" cy="8" r="8" fill="#B6B6B6" />
+                                <path d="M4.5354 11.2991L11.6065 4.43296" stroke="white" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M11.6065 11.2992L4.5354 4.43311" stroke="white" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_7411_693">
+                                    <rect width="16" height="16" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <p class="error-message" v-if="errors.name">{{ errors.name }}</p>
+                </div>
+                <label for="last-name">نام خانوادگی</label>
+                <div class="input-container">
+                    <input type="text" id="last-name" name="last-name" placeholder="مثال: رضایی" required
+                        v-model="formData.lastname" @blur="validateLastname">
+                    <div class="clear-input" @click="clearInput">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <g clip-path="url(#clip0_7411_693)">
+                                <circle cx="8" cy="8" r="8" fill="#B6B6B6" />
+                                <path d="M4.5354 11.2991L11.6065 4.43296" stroke="white" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M11.6065 11.2992L4.5354 4.43311" stroke="white" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_7411_693">
+                                    <rect width="16" height="16" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <p class="error-message" v-if="errors.lastname">{{ errors.lastname }}</p>
+
+                </div>
+                <label for="mobile-number">شماره تلفن همراه</label>
+                <div class="input-container">
+                    <input type="text" id="mobile-number" @keydown="validateMobileNumber" maxlength="11" name="mobile-number"
+                        placeholder="مثال: 091212345687" required v-model="formData.mobile" @blur="validateMobile">
+                    <div class="clear-input">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <g clip-path="url(#clip0_7411_693)">
+                                <circle cx="8" cy="8" r="8" fill="#B6B6B6" />
+                                <path d="M4.5354 11.2991L11.6065 4.43296" stroke="white" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M11.6065 11.2992L4.5354 4.43311" stroke="white" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_7411_693">
+                                    <rect width="16" height="16" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <p class="error-message" v-if="errors.mobile">{{ errors.mobile }}</p>
+
+                </div>
+                <label for="phone-number">شماره تلفن ثابت (اختیاری) <span>*با پیش شماره</span></label>
+                <div class="input-container">
+                    <input type="text" id="phone-number" @keydown="validatePhoneNumber" name="phone-number" placeholder="مثال: 02144256780" v-model="formData.phone" @blur="validatePhone">
+                    <div class="clear-input">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <g clip-path="url(#clip0_7411_693)">
+                                <circle cx="8" cy="8" r="8" fill="#B6B6B6" />
+                                <path d="M4.5354 11.2991L11.6065 4.43296" stroke="white" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M11.6065 11.2992L4.5354 4.43311" stroke="white" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_7411_693">
+                                    <rect width="16" height="16" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <p class="error-message" v-if="errors.phone">{{ errors.phone }}</p>
+
+                </div>
+                <label for="address">آدرس</label>
+                <div class="input-container">
+                    <input type="text" id="address" name="address" required v-model="formData.address" @blur="validateAddress" required />
+                    <div class="clear-input">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <g clip-path="url(#clip0_7411_693)">
+                                <circle cx="8" cy="8" r="8" fill="#B6B6B6" />
+                                <path d="M4.5354 11.2991L11.6065 4.43296" stroke="white" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M11.6065 11.2992L4.5354 4.43311" stroke="white" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_7411_693">
+                                    <rect width="16" height="16" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </div>
+                    <p class="error-message" v-if="errors.address">{{ errors.address }}</p>
+
+                </div>
+                <div class="checkbox-container">
+                    <label>جنسیت</label>
+
+                    <label class="radio-label" for="female">
+                        <input type="radio" id="female" name="gender">
+                        <div class="radio-circle"></div>
+                        خانم
+                    </label>
+                    <label class="radio-label" for="male">
+                        <input type="radio" id="male" name="gender">
+                        <div class="radio-circle"></div>
+                        آقا
+                    </label>
+                </div>
+                
+            </form>
+        </section>
+
+        <div class="submit-container">
+            <span @click="submitForm">
+                ثبت و ادامه
+            </span>
+        </div>
+    </main>
+
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script src="./app.js">
+       
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,231 @@
+:root {
+    --primary: #00BFA5;
+    --secondary: #E61236;
+    --text-color: #37474F;
+    --gray-border: #d4d4d4;
+    --gary: #9b9b9b;
+    --main-font: Vazir
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+body {
+    font-family: var(--main-font);
+    font-weight: 400;
+    color: var(--text-color);
+    background-color: #F5F5F5;
+    min-height: 100svh;
+}
+
+header {
+    background-color: #fff;
+    box-shadow: 0px 0px 4px 0px #00000026;
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+
+    .logo {
+        display: flex;
+
+        img {
+            width: 45px;
+            height: 25px;
+        }
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 21px;
+
+        li a {
+            font-size: 12.5px;
+            font-weight: 700;
+            color: #37474F;
+
+            &.active {
+                color: var(--primary)
+            }
+
+
+        }
+    }
+}
+
+main {
+    padding: 1rem;
+
+    h1 {
+        font-size: 1rem;
+        line-height: 2rem;
+        font-weight: 400;
+        margin-bottom: 10px;
+    }
+
+    .form-container {
+        padding: 1rem;
+        background-color: #fff;
+        margin-bottom: 80px;
+        border: 1px solid #EDF0F2;
+        border-radius: 4px;
+
+        h3 {
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        label{
+            font-size: 0.75rem;
+            font-weight: 500;
+
+            &:has(span){
+                display: flex;
+                justify-content: space-between;
+                span{
+                    color: #757575;
+                    
+                }
+            }
+        }
+    }
+}
+
+.input-container {
+    margin-top: 9px;
+    margin-bottom: 26px;
+    position: relative;
+    height: 46px;
+    width: 100%;
+    
+    input, textarea {
+        width: 100%;
+        height: 100%;
+        color: var(--text-color);
+        border: 1px solid var(--gray-border);
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        font-family: var(--main-font);
+        outline: none;
+        &:focus{
+            border: 1px solid var(--primary);
+            caret-color: var(--primary);
+        }
+       
+        &::placeholder {
+            color: #BDBDBD;
+        }
+    }
+    .clear-input{
+        display: none;
+    }
+    &:has(input:valid) .clear-input{
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        transform: translateY(-50%);
+        display: flex;
+        svg{
+            height: 1rem;
+            width: 1rem;
+        }
+    }
+}
+.checkbox-container{
+    display: flex;
+    input{
+        display: none;
+    }
+    label{
+        width: 80px;
+        display: flex;
+        margin-left: 9px;
+    }
+    .radio-label{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: auto;
+        gap: 9px;
+        margin-left: 37px;
+
+    }
+    .radio-circle{
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        border: 1px solid #D4D4D4;
+        transition: 0.5s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &::after{
+            content: '';
+            display: block;
+            width: 0;
+            height: 0px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            transition: 0.2s;
+        }
+    }
+    input:checked + .radio-circle{
+        border: 1px solid var(--primary);
+        
+        &::after{
+            content: '';
+            display: block;
+            width: 9px;
+            height: 9px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            transition: 0.2s;
+        }
+
+    }
+}
+.submit-container{
+    padding: 1rem;
+    box-shadow: 0px -1px 6px 0px #00000026;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    span{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 48px;
+        border-radius: 4px;
+        background-color: var(--primary);
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 700;
+        width: 100%;
+        border: none;
+        font-family: var(--main-font);
+    }
+}
+.error-message{
+    font-size: 10px;
+    color: var(--secondary);
+    line-height: 2rem;
+}

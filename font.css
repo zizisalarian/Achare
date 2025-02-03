@@ -1,0 +1,45 @@
+@font-face {
+    font-family: Vazir;
+    src: url('./assets/font/vazir/Farsi-Digits-Without-Latin/Vazir-Bold-FD-WOL.eot') format('embedded-opentype'),
+        url('./assets/font/vazir/Farsi-Digits-Without-Latin/Vazir-Bold-FD-WOL.woff2') format('woff2'),
+        url('./assets/font/vazir/Farsi-Digits-Without-Latin/Vazir-Bold-FD-WOL.woff') format('woff'),
+        url('./assets/font/vazir/Farsi-Digits-Without-Latin/Vazir-Bold-FD-WOL.ttf') format('truetype');
+
+    font-weight: 700;
+}
+@font-face {
+    font-family: Vazir;
+    src: url('./assets/font/vazir/Farsi-Digits-Without-Latin/Vazir-Medium-FD-WOL.eot') format('embedded-opentype'),
+        url('./assets/font/vazir/Farsi-Digits-Without-Latin/Vazir-Medium-FD-WOL.woff2') format('woff2'),
+        url('./assets/font/vazir/Farsi-Digits-Without-Latin/Vazir-Medium-FD-WOL.woff') format('woff'),
+        url('./assets/font/vazir/Farsi-Digits-Without-Latin/Vazir-Medium-FD-WOL.ttf') format('truetype');
+
+    font-weight: 500;
+}
+@font-face {
+    font-family: Vazir;
+    src: url('./assets/font/vazir/Farsi-Digits-Without-Latin/Vazir-FD-WOL.eot') format('embedded-opentype'),
+        url('./assets/font/vazir/Farsi-Digits-Without-Latin/Vazir-FD-WOL.woff2') format('woff2'),
+        url('./assets/font/vazir/Farsi-Digits-Without-Latin/Vazir-FD-WOL.woff') format('woff'),
+        url('./assets/font/vazir/Farsi-Digits-Without-Latin/Vazir-FD-WOL.ttf') format('truetype');
+
+    font-weight: 400;
+}
+@font-face {
+    font-family: Vazir;
+    src: url('./assets/font/vazir/Farsi-Digits-Without-Latin/Vazir-Light-FD-WOL.eot') format('embedded-opentype'),
+        url('./assets/font/vazir/Farsi-Digits-Without-Latin/Vazir-Light-FD-WOL.woff2') format('woff2'),
+        url('./assets/font/vazir/Farsi-Digits-Without-Latin/Vazir-Light-FD-WOL.woff') format('woff'),
+        url('./assets/font/vazir/Farsi-Digits-Without-Latin/Vazir-Light-FD-WOL.ttf') format('truetype');
+
+    font-weight:300;
+}
+@font-face {
+    font-family: Vazir;
+    src: url('./assets/font/vazir/Farsi-Digits-Without-Latin/Vazir-Thin-FD-WOL.eot') format('embedded-opentype'),
+        url('./assets/font/vazir/Farsi-Digits-Without-Latin/Vazir-Thin-FD-WOL.woff2') format('woff2'),
+        url('./assets/font/vazir/Farsi-Digits-Without-Latin/Vazir-Thin-FD-WOL.woff') format('woff'),
+        url('./assets/font/vazir/Farsi-Digits-Without-Latin/Vazir-Thin-FD-WOL.ttf') format('truetype');
+
+    font-weight: 200;
+}
