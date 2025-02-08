@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=آدرس ها و مشخصات, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="./font.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>آدرس ها</title>
+</head>
+
+<body>
+
+    <header id="nav">
+        <a href="/" class="logo">
+            <img src="./assets/image/logo.png" alt="">
+        </a>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/" :class="{ active: isActiveLink('/') }">
+                        ثبت آدرس
+                    </a>
+                </li>
+                <li>
+                    <a href="/address.html" :class="{ active: isActiveLink('/address.html') }">
+                        مشاهده آدرس‌ها
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>
+            آدرس ها و مشخصات
+        </h1>
+
+    <section class="address-cards" id="list">
+       
+        <div v-for="(address , index) in addresses" :key="index" class="address-card">
+           
+            <div class="mobile">
+                <h5>نام و نام خانوادگی</h5>
+                <p>{{address.first_name}}  {{address.last_name}}</p>
+            </div>
+            <div class="desktop">
+                <h5>نام</h5>
+                <p>{{ address.first_name }} </p>
+            </div>
+            <div class="desktop">
+                <h5> نام خانوادگی</h5>
+                <p> {{ address.last_name }} </p>
+            </div>
+            <div>
+                <h5>جنسیت</h5>
+                <p> {{ address.gender }} </p>
+            </div>
+            <div>
+                <h5>شماره تلفن همراه</h5>
+                <p> {{ address.coordinate_mobile }} </p>
+            </div>
+            <div>
+                <h5>شماره تلفن ثابت</h5>
+                <p> {{address.coordinate_phone_number}} || - </p>
+            </div>
+            <div>
+                <h5>آدرس</h5>
+                <p> {{address.address}} </p>
+            </div>
+
+        </div>
+        
+        
+    </section>
+</main>
+
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="./app.js"></script>
+</body>
+
+</html>
